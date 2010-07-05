@@ -16,6 +16,8 @@ Requires:       perl(IPC::Run3)
 Requires:       perl(Test::Exception)
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
+%{?perl_default_filter}
+
 %description
 This module exports some subs to help test and run scripts in your
 distribution's bin/ directory, if the script path is not absolute.
