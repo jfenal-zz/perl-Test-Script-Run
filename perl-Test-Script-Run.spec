@@ -1,6 +1,6 @@
 Name:           perl-Test-Script-Run
 Version:        0.04
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Test the script with run
 License:        GPL+ or Artistic
 Group:          Development/Libraries
@@ -48,10 +48,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root,-)
 %doc Changes README
+%dir %{perl_vendorlib}/Test
+%dir %{perl_vendorlib}/Test/Script
 %{perl_vendorlib}/Test/Script/Run.pm
 %{_mandir}/man3/Test::Script::Run.3pm*
 
 %changelog
+* Sun Jul 11 2010 Jerome Fenal <jfenal@free.fr> 0.04-3
+- Apply recommendations following Fedora Package Review (BZ#608470#c4)
+  (directory ownership).
+
 * Mon Jul 5 2010 Jerome Fenal <jfenal@free.fr> 0.04-2
 - Apply recommendations following Fedora Package Review (BZ#608470#c1)
 
