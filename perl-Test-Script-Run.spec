@@ -1,6 +1,6 @@
 Name:           perl-Test-Script-Run
 Version:        0.04
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Test the script with run
 License:        GPL+ or Artistic
 Group:          Development/Libraries
@@ -12,8 +12,6 @@ BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  perl(IPC::Run3)
 BuildRequires:  perl(Test::Exception)
 BuildRequires:  perl(Test::More)
-Requires:       perl(IPC::Run3)
-Requires:       perl(Test::Exception)
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 %{?perl_default_filter}
@@ -54,6 +52,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Test::Script::Run.3pm*
 
 %changelog
+* Tue Jul 13 2010 Jerome Fenal <jfenal@free.fr> 0.04-4
+- Apply recommendations following Fedora Package Review
+  (BZ#608470#c6): remove Requires on IPC::Run3 & Test::Exception.
+
 * Sun Jul 11 2010 Jerome Fenal <jfenal@free.fr> 0.04-3
 - Apply recommendations following Fedora Package Review (BZ#608470#c4)
   (directory ownership).
